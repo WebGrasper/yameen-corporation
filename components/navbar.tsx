@@ -5,6 +5,7 @@ import styles from '@/styles/navbar.module.css';
 import Logo from "./logo";
 import Link from "next/link";
 import { Abril_Fatface } from "next/font/google";
+import Image from "next/image";
 const cormorant_garamond = Abril_Fatface({ subsets: ["latin"], weight: [ "400"] });
 
 const Navbar: FunctionComponent = () => {
@@ -21,7 +22,10 @@ const Navbar: FunctionComponent = () => {
                     <ul>
                         <li onMouseEnter={()=> setIsMenuVisible(true)}
                             onMouseLeave={()=> setIsMenuVisible(false)}>
-                            Collections
+                            <div className={styles.dropDownLink}>
+                                <div>Collections</div>
+                                <Image className={`${styles.icon} ${isMenuVisible ? styles.rotate : ""}`} src={'/down-arrow.png'} alt="down arrow icon" width={18} height={20}/>
+                            </div>
                             <ul className={`${styles.megaDropDownMenu} ${isMenuVisible ? styles.show : ""}`}>
                                 <li className={cormorant_garamond.className}>Black Metal Wall Art</li>
                                 <li className={cormorant_garamond.className}>Outdoor Metal Wall Art</li>
