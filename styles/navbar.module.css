@@ -1,0 +1,91 @@
+.root{
+    width: var(--width);
+    background-color: var(--navbar-footer-color);
+    border-bottom: var(--border-bottom-primary-color);
+}
+
+.navbar{
+    max-width: var(--max-width);
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.container:nth-child(2) > ul{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    gap: var(--links-gap-primary);
+    font-size: var(--links-font-size-primary);
+    letter-spacing: var(--links-letter-spacing-primary);
+    font-weight: var(--heading-font-weight);
+    color: var(--links-color);
+}
+
+.container:nth-child(2) > ul > li::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: var(--links-border-bottom-height);
+    background-color: var(--links-color);
+    transition: width var(--transition-timing);
+}
+
+.container:nth-child(2) > ul > li:hover::after{
+    width: 100%;
+}
+
+.megaDropDownMenu{
+    list-style: none;
+    border: 0px 1px 1px 1px solid black;
+    z-index: 99;
+    position: fixed;
+    width: var(--width);
+    height: 60vh;
+    left: 0;
+    top: 6.4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(237, 231, 210);
+    overflow-y: scroll;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 0px 0px 36px 36px;
+    padding: 0 3.5rem;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.megaDropDownMenu::-webkit-scrollbar{
+    display: none;
+}
+
+.megaDropDownMenu li {
+    color: var(--links-color);
+    padding: 1rem 0;
+    width: fit-content;
+    letter-spacing: var(--links-letter-spacing-primary);
+    font-size: 2rem;
+}
+
+.megaDropDownMenu li::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: var(--links-border-bottom-height);
+    background-color: var(--links-color);
+    transition: width var(--transition-timing);
+}
+
+.megaDropDownMenu li:hover::after{
+    width: 100%;
+}

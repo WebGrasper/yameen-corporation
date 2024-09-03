@@ -1,0 +1,15 @@
+.root{
+    width: 100%;
+}
+
+.brandName{
+    display: flex;
+    flex-direction: column;
+}
+
+.brandName p{
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    letter-spacing: var(--heading-letter-spacing-primary);
+    line-height: 0.85;
+    font-weight: 800;
+}
