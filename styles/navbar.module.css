@@ -17,7 +17,6 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 100;
 }
 
 .container:nth-child(2) > ul{
@@ -34,6 +33,7 @@
 .container:nth-child(2) > ul > li{
     padding: 2rem 0.5rem;
     cursor: pointer;
+    font-weight: 500;
 }
 
 .container:nth-child(2) > ul > li::after{
@@ -117,4 +117,97 @@
 
 .megaDropDownMenu li:hover::after{
     width: 100%;
+}
+
+.container:nth-child(3){
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container:nth-child(3) img{
+    cursor: pointer;
+}
+
+.searchPage{
+    position: fixed;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -100%;
+    background-color: black;
+    transition: top var(--transition-timing), transform var(--transition-timing);
+}
+
+.searchPage.active {
+    top: 0; 
+}
+
+.searchMain{
+    max-width: var(--max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.searchCloseButton{
+    position: absolute;
+    right: calc(4vw + 1rem);
+}
+
+.formContainer{
+    width: var(--width);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.error{
+    color: var(--font-color-1);
+    word-break: break-word;
+    text-align: center;
+    height: 1rem;
+}
+
+.formContainer form{
+    display: flex;
+    justify-content: center;
+    border-bottom: var(--border-bottom-secondary-color);
+    width: var(--width);
+}
+
+.formContainer form input{
+    width: var(--width);
+    outline: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--font-color-1);
+    font-size: var(--font-size-1);
+    letter-spacing: var(--font-letter-spacing-1);
+}
+
+.formContainer form input::-webkit-search-cancel-button {
+    display: none;
+  }
+
+.formContainer form input::placeholder{
+    color: var(--font-color-1);
+}
+
+.formContainer form button{
+    background-color: transparent;
+    border: none;
+}
+
+.formContainer form button:focus {
+    outline:0;
+}
+
+.formContainer form button:active {
+    outline: none;
+    border: none;
 }
