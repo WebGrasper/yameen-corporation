@@ -1,0 +1,48 @@
+[
+  {
+    "categoryID": "1",
+    "name": "Metal Arts",
+    "subCategories": [
+      {
+        "subCategoryID": "1",
+        "name": "Black Metal Wall Art",
+        "categoryID": "1"
+      },
+      {
+        "subCategoryID": "2",
+        "name": "Outdoor Metal Wall Art",
+        "categoryID": "1"
+      },
+      {
+        "subCategoryID": "3",
+        "name": "Large Metal Wall Art",
+        "categoryID": "1"
+      },
+      {
+        "subCategoryID": "4",
+        "name": "Abstract Metal Wall Art",
+        "categoryID": "1"
+      },
+      {
+        "subCategoryID": "5",
+        "name": "Coastal Metal Wall Art",
+        "categoryID": "1"
+      },
+      { "subCategoryID": "6", "name": "Metal Wall Art", "categoryID": "1" },
+      {
+        "subCategoryID": "7",
+        "name": "Abstract Metal Tree Wall Art",
+        "categoryID": "1"
+      }
+    ]
+  },
+  {
+    "categoryID": "2",
+    "name": "Home Decor",
+    "subCategories": [
+      { "subCategoryID": "8", "name": "Baskets", "categoryID": "2" },
+      { "subCategoryID": "9", "name": "Vases", "categoryID": "2" },
+      { "subCategoryID": "10", "name": "Wall Hangings", "categoryID": "2" }
+    ]
+  }
+]
