@@ -12,8 +12,9 @@
   --heading-font-weight: 600;
 
   --links-letter-spacing-primary: -0.01em;
-  --links-font-size-primary: medium;
-  --links-gap-primary: 1.5rem;
+  --links-font-size-small: 14px;
+  --links-font-size-medium: 16px;
+  --links-gap-primary: 1rem;
   --links-color: rgba(25,25, 25, 1);
   --links-border-bottom-height: 2px;
 
@@ -25,6 +26,8 @@
 
   --border-bottom-primary-color: 1px solid rgba(99,99,99,1);
   --border-bottom-secondary-color: 1px solid rgba(252, 247, 230, 1);
+
+  --max-width-for-tablet: 1032px;
 }
 
 /*

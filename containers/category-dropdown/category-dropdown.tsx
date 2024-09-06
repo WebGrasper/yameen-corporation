@@ -1,14 +1,14 @@
 "use client";
 
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import Link from "next/link";
-import { Abril_Fatface } from "next/font/google";
+import { Frank_Ruhl_Libre } from "next/font/google";
 import styles from "./category-dropdown.module.css";
 import Image from "next/image";
 
-const AbrilFatface = Abril_Fatface({
+const frankRuhlLibre = Frank_Ruhl_Libre({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["800"],
 });
 
 interface Category {
@@ -23,22 +23,55 @@ interface SubCategory {
   categoryID: string;
 }
 
-const DropDownMenu: FunctionComponent<{ categories: Category[] }> = ({
+const CategoryDrodown: FunctionComponent<{ categories: Category[], isShowLeftMenu: boolean, handleLeftMenu: ()=> void }> = ({
   categories,
+  isShowLeftMenu,
+  handleLeftMenu
 }) => {
   const [categoryHover, setCategoryHover] = useState<String | null>(null);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
 
-  const handleCategoryHover = (categoryID: String | null) => {
-    setCategoryHover(categoryID !== null ? categoryID : null);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isSmallScreen: boolean = screenSize < 1121;
+
+  const handleCategoryHover = (categoryID: String | null, eventType: String) => {
+    if(eventType === "click"){
+      setCategoryHover(prev => prev === categoryID ? null : categoryID);
+    } else if(eventType === "hover"){
+      setCategoryHover(categoryID);
+    }
   };
 
   return (
-    <>
+    <ul className={`${styles.root} ${isShowLeftMenu ? styles.active : ""}`}>
+      <li className={styles.closing_icon} onClick={handleLeftMenu}>
+        <Image src={"/close-dark.png"} alt="close button" width={40} height={40} />
+      </li>
       {categories.map((category: Category) => (
         <li
           key={category.categoryID as string}
-          onMouseEnter={() => handleCategoryHover(category.categoryID)}
-          onMouseLeave={() => handleCategoryHover(null)}
+          {...(
+            isSmallScreen ? 
+            {
+              onClick: ()=> handleCategoryHover(category.categoryID, "click")
+            }
+            :
+            {
+              onMouseEnter: () => handleCategoryHover(category.categoryID, "hover"),
+              onMouseLeave: () => handleCategoryHover(null, "hover")
+            })}
           className={styles.links}
         >
           <div className={styles.dropDownLink}>
@@ -47,10 +80,10 @@ const DropDownMenu: FunctionComponent<{ categories: Category[] }> = ({
               className={`${styles.primary_menu_icon} ${
                 categoryHover === category.categoryID ? styles.rotate : ""
               }`}
-              src={"/down-arrow.png"}
+              src={`/down-arrow-dark.png`}
               alt="down arrow icon"
-              width={18}
-              height={20}
+              width={`${screenSize < 1121 ? 15 : 18}`}
+              height={`${screenSize < 1121 ? 15 : 18}`}
             />
           </div>
           <ul
@@ -61,7 +94,7 @@ const DropDownMenu: FunctionComponent<{ categories: Category[] }> = ({
             {category.subCategories.map((subcategory) => (
               <li
                 key={subcategory.subCategoryID as string}
-                className={`${AbrilFatface.className} ${styles.subCategoryLink}`}
+                className={`${frankRuhlLibre.className} ${styles.subCategoryLink}`}
               >
                 {subcategory.name}
               </li>
@@ -79,8 +112,8 @@ const DropDownMenu: FunctionComponent<{ categories: Category[] }> = ({
           Contact us
         </Link>
       </li>
-    </>
+    </ul>
   );
 };
 
-export default DropDownMenu;
+export default CategoryDrodown;

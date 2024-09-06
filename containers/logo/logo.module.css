@@ -5,10 +5,11 @@
 .brandName{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .brandName p{
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
     letter-spacing: var(--heading-letter-spacing-primary);
     line-height: 0.85;
     font-weight: 800;

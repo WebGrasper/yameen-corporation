@@ -2,16 +2,13 @@
 
 import { FunctionComponent, useState } from "react";
 import styles from "./search-dropdown.module.css";
-import { Abril_Fatface } from "next/font/google";
+import { Frank_Ruhl_Libre } from "next/font/google";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-const AbrilFatface = Abril_Fatface({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: [ "800"] });
 
 /* Defining the inputs that form consists.*/
 type Inputs = {
@@ -73,7 +70,7 @@ const SearchDropdown: FunctionComponent = () => {
           <div className={styles.formContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
-                className={`${AbrilFatface.className}`}
+                className={`${frankRuhlLibre.className}`}
                 type="search"
                 {...register("search")}
                 placeholder="Start search..."

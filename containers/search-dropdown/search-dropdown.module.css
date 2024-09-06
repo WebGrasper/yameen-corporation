@@ -1,3 +1,7 @@
+.searchContainer{
+    display: inherit;
+}
+
 .secondary_menu_icon{
     cursor: pointer;
 }

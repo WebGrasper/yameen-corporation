@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 1121px) {
+  .root > div {
+    display: none; /* Hiding search button */
+  }
+}
