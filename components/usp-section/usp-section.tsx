@@ -1,14 +1,14 @@
 "use client";
 
-import { FunctionComponent, useEffect, useRef, useState } from "react";
+import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import styles from "./usp-section.module.css";
 import USP from "@/containers/usp/usp";
 
 const USPSection: FunctionComponent = () => {
   const slidesContainerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [touchStart, setTouchStart] = useState<any>(null);
-  const [touchEnd, setTouchEnd] = useState<any>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Use useEffect to access the ref after the component mounts
   useEffect(() => {
@@ -24,6 +24,10 @@ const USPSection: FunctionComponent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    slideImage();
+  }, [currentIndex]);
+
   const slideImage = () => {
     if (slidesContainerRef.current) {
       const slidesArray = Array.from(slidesContainerRef.current.children);
@@ -38,27 +42,26 @@ const USPSection: FunctionComponent = () => {
     }
   };
 
-  const handleTouchStart = (e:any) => {
+  const handleTouchStart = (e:React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e:any) => {
+  const handleTouchMove = (e:React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
   const handleTouchEnd = async() => {
-    if (!touchStart || !touchEnd) return;
+    if (touchStart === null || touchEnd === null) return;
     const distance = touchStart - touchEnd;
 
-    if (distance > 40) {
-      await setCurrentIndex(prev => (prev+1));
-      slideImage();
+    if (distance > 40 && currentIndex < (slidesContainerRef.current?.children.length || 1) - 1) {
+      setCurrentIndex((prev) => prev + 1);
     }
 
-    if (distance < -40) {
-      await setCurrentIndex(prev => (prev-1));
-      slideImage();
+    if (distance < -40 && currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
     }
+
 
     setTouchStart(null);
     setTouchEnd(null);
