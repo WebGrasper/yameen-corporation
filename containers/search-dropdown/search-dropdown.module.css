@@ -13,6 +13,7 @@
     height: 100%;
     left: 0;
     top: -100%;
+    z-index: 99;
     background-color: black;
     transition: top var(--transition-timing), transform var(--transition-timing);
 }
@@ -53,7 +54,7 @@
 .formContainer form{
     display: flex;
     justify-content: center;
-    border-bottom: var(--border-bottom-secondary-color);
+    border-bottom: var(--border-bottom-color-1);
     width: var(--width);
 }
 

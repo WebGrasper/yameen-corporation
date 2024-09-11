@@ -12,44 +12,54 @@ const frankRuhlLibre = Frank_Ruhl_Libre({
 });
 
 interface Category {
-  categoryID: string;
+  _id: string;
   name: string;
-  subCategories: SubCategory[];
+  subcategories: SubCategory[];
 }
 
 interface SubCategory {
-  subCategoryID: string;
+  _id: string;
   name: string;
-  categoryID: string;
+  parentCategory: string;
 }
 
-const CategoryDrodown: FunctionComponent<{ categories: Category[], isShowLeftMenu: boolean, handleLeftMenu: ()=> void }> = ({
-  categories,
-  isShowLeftMenu,
-  handleLeftMenu
-}) => {
+const CategoryDrodown: FunctionComponent<{
+  categories: Category[],
+  isShowLeftMenu: boolean,
+  handleLeftMenu: () => void,
+  isOffset: boolean,
+  navbarHover: boolean
+}> = ({ categories, isShowLeftMenu, handleLeftMenu, isOffset, navbarHover }) => {
   const [categoryHover, setCategoryHover] = useState<String | null>(null);
-  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const [screenSize, setScreenSize] = useState<number | null>(null);  // Initialize with null
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== "undefined") {
       setScreenSize(window.innerWidth);
-    };
 
-    window.addEventListener("resize", handleResize);
+      const handleResize = () => {
+        setScreenSize(window.innerWidth);
+      };
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      window.addEventListener("resize", handleResize);
+
+      // Clean up the event listener on component unmount
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
-  const isSmallScreen: boolean = screenSize < 1121;
+  // Provide a default value (1121) if screenSize is null
+  const isSmallScreen: boolean = (screenSize ?? 1121) < 1121;
 
-  const handleCategoryHover = (categoryID: String | null, eventType: String) => {
-    if(eventType === "click"){
-      setCategoryHover(prev => prev === categoryID ? null : categoryID);
-    } else if(eventType === "hover"){
+  const handleCategoryHover = (
+    categoryID: String | null,
+    eventType: String
+  ) => {
+    if (eventType === "click") {
+      setCategoryHover((prev) => (prev === categoryID ? null : categoryID));
+    } else if (eventType === "hover") {
       setCategoryHover(categoryID);
     }
   };
@@ -57,43 +67,52 @@ const CategoryDrodown: FunctionComponent<{ categories: Category[], isShowLeftMen
   return (
     <ul className={`${styles.root} ${isShowLeftMenu ? styles.active : ""}`}>
       <li className={styles.closing_icon} onClick={handleLeftMenu}>
-        <Image src={"/close-dark.png"} alt="close button" width={40} height={40} />
+        <Image
+          src={"/close-dark.png"}
+          alt="close button"
+          width={40}
+          height={40}
+        />
       </li>
-      {categories.map((category: Category) => (
+      {categories?.map((category: Category) => (
         <li
-          key={category.categoryID as string}
-          {...(
-            isSmallScreen ? 
-            {
-              onClick: ()=> handleCategoryHover(category.categoryID, "click")
-            }
-            :
-            {
-              onMouseEnter: () => handleCategoryHover(category.categoryID, "hover"),
-              onMouseLeave: () => handleCategoryHover(null, "hover")
-            })}
-          className={styles.links}
+          key={category._id as string}
+          {...(isSmallScreen
+            ? {
+                onClick: () =>
+                  handleCategoryHover(category._id, "click"),
+              }
+            : {
+                onMouseEnter: () =>
+                  handleCategoryHover(category._id, "hover"),
+                onMouseLeave: () => handleCategoryHover(null, "hover"),
+              })}
+          className={`${styles.links} ${(isOffset || navbarHover) ? styles.active : ""}`}
         >
           <div className={styles.dropDownLink}>
             <div>{category.name}</div>
             <Image
               className={`${styles.primary_menu_icon} ${
-                categoryHover === category.categoryID ? styles.rotate : ""
+                categoryHover === category._id ? styles.rotate : ""
               }`}
-              src={`/down-arrow-dark.png`}
+              src={
+                ((screenSize ?? 1121) < 1121 || (isOffset || navbarHover))
+                  ? '/down-arrow-dark.png'
+                  : '/down-arrow-light.png'
+              }
               alt="down arrow icon"
-              width={`${screenSize < 1121 ? 15 : 18}`}
-              height={`${screenSize < 1121 ? 15 : 18}`}
+              width={`15`}
+              height={`15`}
             />
           </div>
           <ul
             className={`${styles.dropDownMenu} ${
-              categoryHover === category.categoryID ? styles.show : ""
+              categoryHover === category._id ? styles.show : ""
             }`}
           >
-            {category.subCategories.map((subcategory) => (
+            {category.subcategories.map((subcategory) => (
               <li
-                key={subcategory.subCategoryID as string}
+                key={subcategory._id as string}
                 className={`${frankRuhlLibre.className} ${styles.subCategoryLink}`}
               >
                 {subcategory.name}
@@ -102,12 +121,12 @@ const CategoryDrodown: FunctionComponent<{ categories: Category[], isShowLeftMen
           </ul>
         </li>
       ))}
-      <li className={styles.links}>
+      <li className={`${styles.links} ${(isOffset || navbarHover) ? styles.active : ""}`}>
         <Link href={"#"} passHref>
           About us
         </Link>
       </li>
-      <li className={styles.links}>
+      <li className={`${styles.links} ${(isOffset || navbarHover) ? styles.active : ""}`}>
         <Link href={"#"} passHref>
           Contact us
         </Link>

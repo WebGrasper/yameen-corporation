@@ -6,26 +6,43 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: rgba(255,255,255,1);
-  --navbar-footer-color: rgba(237, 231, 210, 1);
+  --foreground-rgb-1: rgba(237, 231, 210, 1);
+  --foreground-rgb-2: rgba(245, 240, 223, 1);
   --heading-letter-spacing-primary: -0.05em;
+
+  --heading-font-size-1: clamp(1.6rem, 3vw, 2.5rem);
+  --heading-font-size-2: clamp(2.25rem, 5vw, 4rem);
   --heading-font-weight: 600;
+  --heading-line-height-1: 0.85;
+  --heading-line-height-2: 1.5;
 
   --links-letter-spacing-primary: -0.01em;
   --links-font-size-small: 14px;
   --links-font-size-medium: 16px;
-  --links-gap-primary: 1rem;
+  --links-gap-1: 1rem;
+  --links-gap-2: 0.5rem;
+  --links-gap-3: 1.5rem;
   --links-color: rgba(25,25, 25, 1);
   --links-border-bottom-height: 2px;
 
   --transition-timing: 0.4s ease;
 
   --font-color-1: rgba(252, 247, 230, 1);
+  --font-color-2: rgba(19, 19, 19, 1);
   --font-size-1: clamp(2rem , 5vw, 4rem);
   --font-letter-spacing-1: -0.025em;
 
-  --border-bottom-primary-color: 1px solid rgba(99,99,99,1);
-  --border-bottom-secondary-color: 1px solid rgba(252, 247, 230, 1);
+  --button-padding-1: .5rem 2rem;
+  --button-border-radius-1: 26px;
+  --button-color-hover-1: rgba(19, 19, 19, 1);
+  --button-bg-color-1: rgba(252, 247, 230, 1);
+  --button-bg-color-2: rgba(19, 19, 19, 1);
+  --button-bg-hover-1: rgba(252, 247, 230, 1);
+  --button-border-color-1: rgba(252, 247, 230, 1);
+  --button-border-color-2: rgba(19, 19, 19, 1);
+
+  --border-bottom-color-1: 1.5px solid rgba(252, 247, 230, 1);
+  --border-bottom-color-2: 1.5px solid rgba(19, 19, 19, 1);
 
   --max-width-for-tablet: 1032px;
 }
@@ -49,12 +66,12 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  background-color: var(--foreground-rgb-1);
+  position: relative;
 }
 
 a {

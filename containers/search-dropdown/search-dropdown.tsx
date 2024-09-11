@@ -23,7 +23,7 @@ const schema = yup
   })
   .required();
 
-const SearchDropdown: FunctionComponent = () => {
+const SearchDropdown: FunctionComponent<{isOffset: boolean, navbarHover: boolean}> = ({isOffset, navbarHover}) => {
   const [isSearchActive, setSearchActive] = useState<boolean>(false);
 
   const toggleSearchPage = () => {
@@ -47,7 +47,7 @@ const SearchDropdown: FunctionComponent = () => {
     <div className={styles.searchContainer}>
       <Image
         className={`${styles.secondary_menu_icon} `}
-        src={"/search.svg"}
+        src={`${(isOffset || navbarHover) ? '/search-dark.svg' : '/search-light.png'}`}
         alt="search icon"
         width={25}
         height={25}
@@ -78,7 +78,7 @@ const SearchDropdown: FunctionComponent = () => {
               <button type="submit">
                 <Image
                   className={`${styles.secondary_menu_icon} `}
-                  src={"/search-light-gold.svg"}
+                  src={"/search-light.png"}
                   alt="search icon"
                   width={35}
                   height={35}
