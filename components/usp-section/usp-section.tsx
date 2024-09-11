@@ -6,8 +6,9 @@ import USP from "@/containers/usp/usp";
 
 const USPSection: FunctionComponent = () => {
   const slidesContainerRef = useRef<HTMLDivElement>(null);
-  const [counter, setCounter] = useState(0);
-  const [startX, setStartX] = useState(0); // to track touchstart X position
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [touchStart, setTouchStart] = useState<any>(null);
+  const [touchEnd, setTouchEnd] = useState<any>(null);
 
   // Use useEffect to access the ref after the component mounts
   useEffect(() => {
@@ -31,47 +32,38 @@ const USPSection: FunctionComponent = () => {
         const slideElement = slide as HTMLElement;
         // Translate based on the current counter value
         slideElement.style.transform = `translateX(${
-          (index - counter) * 100
+          currentIndex * 100
         }%)`;
       });
     }
   };
 
-  // Handle touch start
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setStartX(e.touches[0].clientX);
+  const handleTouchStart = (e:any) => {
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
-  // Handle touch end to detect swipe direction
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const endX = e.changedTouches[0].clientX;
-    const deltaX = startX - endX; // Calculate the difference between touchstart and touchend
-
-    // If swipe is greater than a threshold (50px), we consider it a swipe
-    if (deltaX > 50) {
-      handleNext(); // Swipe left -> next slide
-    } else if (deltaX < -50) {
-      handlePrev(); // Swipe right -> previous slide
-    }
+  const handleTouchMove = (e:any) => {
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  // Increment the counter to show the next slide
-  const handleNext = () => {
-    if (slidesContainerRef.current) {
-      if (counter < slidesContainerRef.current.children.length - 1) {
-        setCounter((prevCounter) => prevCounter + 1);
-        slideImage();
-      }
-    }
-  };
+  const handleTouchEnd = async() => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
 
-  // Decrement the counter to show the previous slide
-  const handlePrev = () => {
-    if (counter > 0) {
-      setCounter((prevCounter) => prevCounter - 1);
+    if (distance > 40) {
+      await setCurrentIndex(prev => (prev+1));
       slideImage();
     }
+
+    if (distance < -40) {
+      await setCurrentIndex(prev => (prev-1));
+      slideImage();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
   };
+ 
 
   return (
     <div className={styles.root}>
@@ -79,6 +71,7 @@ const USPSection: FunctionComponent = () => {
         className={styles.main}
         ref={slidesContainerRef}
         onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         <USP
