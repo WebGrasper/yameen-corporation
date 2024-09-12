@@ -10,6 +10,8 @@ const USPSection: FunctionComponent = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
+  const totalSlides = 2;  
+
   // Use useEffect to access the ref after the component mounts
   useEffect(() => {
     if (slidesContainerRef.current) {
@@ -24,6 +26,7 @@ const USPSection: FunctionComponent = () => {
     }
   }, []);
 
+  // Slide to the current image when the index changes
   useEffect(() => {
     slideImage();
   }, [currentIndex]);
@@ -35,7 +38,7 @@ const USPSection: FunctionComponent = () => {
       slidesArray.forEach((slide, index) => {
         const slideElement = slide as HTMLElement;
         // Translate based on the current counter value
-        slideElement.style.transform = `translateX(${
+        slideElement.style.transform = `translateX(-${
           currentIndex * 100
         }%)`;
       });
@@ -50,18 +53,20 @@ const USPSection: FunctionComponent = () => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const handleTouchEnd = async() => {
+  const handleTouchEnd = () => {
     if (touchStart === null || touchEnd === null) return;
     const distance = touchStart - touchEnd;
 
-    if (distance > 40 && currentIndex < (slidesContainerRef.current?.children.length || 1) - 1) {
-      setCurrentIndex((prev) => prev + 1);
+    
+    if (distance > 40 && currentIndex < totalSlides) {
+      // Swiping left (to see the next slide)
+      setCurrentIndex((prev) => Math.min(prev + 1, totalSlides));
     }
 
     if (distance < -40 && currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
+      // Swiping right (to see the previous slide)
+      setCurrentIndex((prev) => Math.max(prev - 1, 0));
     }
-
 
     setTouchStart(null);
     setTouchEnd(null);
