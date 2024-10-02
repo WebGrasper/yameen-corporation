@@ -31,7 +31,7 @@
   width: 0;
   height: var(--links-border-bottom-height);
   background-color: var(--links-color);
-  transition: width var(--transition-timing);
+  transition: width var(--transition-timing-1);
 }
 
 .links:hover::after {
@@ -47,7 +47,7 @@
 
 .primary_menu_icon {
   transform: rotate(0);
-  transition: transform var(--transition-timing);
+  transition: transform var(--transition-timing-1);
 }
 .rotate {
   transform: rotate(-180deg);
@@ -73,8 +73,8 @@
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 
-  transition: height var(--transition-timing), opacity var(--transition-timing),
-    pointer-events var(--transition-timing);
+  transition: height var(--transition-timing-1), opacity var(--transition-timing-1),
+    pointer-events var(--transition-timing-1);
 }
 
 .show {
@@ -102,7 +102,7 @@
   width: 0;
   height: var(--links-border-bottom-height);
   background-color: var(--links-color);
-  transition: width var(--transition-timing);
+  transition: width var(--transition-timing-1);
 }
 
 .subCategoryLink:hover::after {
@@ -128,7 +128,7 @@
     background-color: var(--foreground-rgb-1);
 
     transform: translateX(-100%);
-    transition: transform var(--transition-timing);
+    transition: transform var(--transition-timing-1);
   }
   .active{
     transform: translateX(0%);
@@ -175,8 +175,8 @@
     border-radius: 0;
     padding: unset;
 
-    transition: height var(--transition-timing),
-      opacity var(--transition-timing), pointer-events var(--transition-timing);
+    transition: height var(--transition-timing-1),
+      opacity var(--transition-timing-1), pointer-events var(--transition-timing-1);
   }
   .show {
     height: 100%;

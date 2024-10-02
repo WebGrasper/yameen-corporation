@@ -1,0 +1,111 @@
+.root {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Optional: Enables snapping to cards when scrolling */
+  padding-inline: 1rem;
+  padding-bottom: 2rem;
+}
+
+.animatedRoot {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Optional: Enables snapping to cards when scrolling */
+  padding-inline: 1rem;
+  padding-bottom: 2rem;
+  opacity: 0;
+  transition: opacity var(--transition-timing-4),
+    transform var(--transition-timing-4);
+}
+
+.animation {
+  opacity: 1; 
+}
+
+.animatedRoot::-webkit-scrollbar{
+  background-color: var(--foreground-rgb-2);
+  height: 2px;
+  border-radius: var(--border-radius-2);
+}
+
+.animatedRoot::-webkit-scrollbar-thumb{
+  background-color: black;
+  border-radius: var(--border-radius-2);
+}
+
+.card {
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent the cards from shrinking */
+  width: calc(
+    100% / 3 - 1rem
+  ); /* Each card takes 1/3rd of the width minus the gap */
+  scroll-snap-align: start; /* Optional: Snaps the cards to start when scrolling */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.images {
+  overflow: hidden;
+  border-radius: var(--border-radius-1);
+}
+
+.images img {
+  width: 100%;
+  height: 100%;
+  scale: 1;
+  transition: scale var(--transition-timing-1);
+}
+
+.card:hover .images img {
+  scale: 1.125;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.15rem;
+  letter-spacing: var(--links-letter-spacing-primary);
+  line-height: var(--heading-line-height-2);
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--heading-font-weight);
+  font-size: var(--links-font-size-medium);
+}
+
+.discountedPrice {
+  text-decoration: none;
+}
+
+.mainPrice {
+  font-size: var(--links-font-size-small);
+  opacity: 0.6;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  
+  .card {
+    width: calc(
+      100% / 2
+    ); /* Each card takes 1/2th of the width minus the gap */
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .root {
+    padding-inline: unset;
+  }
+  .card {
+    width: 100%; /* Each card takes full width*/
+  }
+}

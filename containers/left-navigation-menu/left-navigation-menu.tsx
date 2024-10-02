@@ -9,13 +9,13 @@ import CategoryDrodown from "../../containers/category-dropdown/category-dropdow
 interface Category {
   _id: string;
   name: string;
-  subcategories: SubCategory[];
+  subCategories: SubCategory[];
 }
 
 interface SubCategory {
   _id: string;
   name: string;
-  parentCategory: string;
+  categoryID: string;
 }
 
 const LeftNavigationMenu: FunctionComponent<{ categories: Category[], isOffset: boolean, navbarHover:boolean }> = ({

@@ -1,31 +1,41 @@
 :root {
   --max-width: 75rem;
   --width: 100%;
-  --border-radius: 12px;
+  --border-radius-1: 20px;
+  --border-radius-2: 26px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb-1: rgba(237, 231, 210, 1);
+  --foreground-rgb-1: rgba(252, 247, 230, 1);
   --foreground-rgb-2: rgba(245, 240, 223, 1);
   --heading-letter-spacing-primary: -0.05em;
 
-  --heading-font-size-1: clamp(1.6rem, 3vw, 2.5rem);
-  --heading-font-size-2: clamp(2.25rem, 5vw, 4rem);
+  --heading-font-size-1: clamp(1.75rem, 3vw, 2.5rem);
+  --heading-font-size-2: clamp(3.25rem, 5vw, 4rem);
+  --heading-font-size-3: clamp(2.5rem, 4.25vw, 3.5rem);
+  --heading-font-size-4: clamp(1.15, 2vw, 1.2rem);
+
   --heading-font-weight: 600;
   --heading-line-height-1: 0.85;
-  --heading-line-height-2: 1.5;
+  --heading-line-height-2: 1.25;
+  --heading-line-height-3: 1.35;
+  --heading-line-height-4: 1.5;
 
   --links-letter-spacing-primary: -0.01em;
   --links-font-size-small: 14px;
   --links-font-size-medium: 16px;
+  --links-font-size-large: 20px;
   --links-gap-1: 1rem;
   --links-gap-2: 0.5rem;
   --links-gap-3: 1.5rem;
   --links-color: rgba(25,25, 25, 1);
   --links-border-bottom-height: 2px;
 
-  --transition-timing: 0.4s ease;
+  --transition-timing-1: 0.6s ease;
+  --transition-timing-2: 1s ease;
+  --transition-timing-3: 1.125s ease;
+  --transition-timing-4: 1.25s ease;
 
   --font-color-1: rgba(252, 247, 230, 1);
   --font-color-2: rgba(19, 19, 19, 1);
@@ -72,6 +82,7 @@ body {
 body {
   background-color: var(--foreground-rgb-1);
   position: relative;
+  color: var(--font-color-2);
 }
 
 a {

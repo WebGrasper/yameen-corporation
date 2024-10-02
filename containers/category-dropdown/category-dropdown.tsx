@@ -14,13 +14,13 @@ const frankRuhlLibre = Frank_Ruhl_Libre({
 interface Category {
   _id: string;
   name: string;
-  subcategories: SubCategory[];
+  subCategories: SubCategory[];
 }
 
 interface SubCategory {
   _id: string;
   name: string;
-  parentCategory: string;
+  categoryID: string;
 }
 
 const CategoryDrodown: FunctionComponent<{
@@ -110,7 +110,7 @@ const CategoryDrodown: FunctionComponent<{
               categoryHover === category._id ? styles.show : ""
             }`}
           >
-            {category.subcategories.map((subcategory) => (
+            {category.subCategories.map((subcategory) => (
               <li
                 key={subcategory._id as string}
                 className={`${frankRuhlLibre.className} ${styles.subCategoryLink}`}

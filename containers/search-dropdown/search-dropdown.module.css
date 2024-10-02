@@ -15,7 +15,7 @@
     top: -100%;
     z-index: 99;
     background-color: black;
-    transition: top var(--transition-timing), transform var(--transition-timing);
+    transition: top var(--transition-timing-1), transform var(--transition-timing-1);
 }
 
 .searchPage.active {

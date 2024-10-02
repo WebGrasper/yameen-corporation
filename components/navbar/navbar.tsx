@@ -59,7 +59,7 @@ import { FunctionComponent } from "react";
 const Navbar: FunctionComponent = async () => {
   // let categories = await fetchData();
 
-  let res = await fetch("https://ecommerce-backend-pied-seven.vercel.app/api/category/getcategory");
+  let res = await fetch("https://ecommerce-backend-pied-seven.vercel.app/api/category/getcategories");
   let {categories} = await res.json();
 
   

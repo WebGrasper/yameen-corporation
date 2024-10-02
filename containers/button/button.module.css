@@ -6,7 +6,7 @@
   position: relative;
   z-index: 1;
   overflow-x: hidden;
-  transition: color var(--transition-timing);
+  transition: color var(--transition-timing-1);
 }
 
 .transparent:hover {
@@ -26,7 +26,7 @@
 
   /* Hiding(Clipping) 100% from top to bottom */
   clip-path: inset(100% 0 0 0);
-  transition: clip-path var(--transition-timing);
+  transition: clip-path var(--transition-timing-1);
 }
 
 .transparent:hover::before {
@@ -45,8 +45,8 @@
   position: relative;
   z-index: 1;
   overflow-x: hidden;
-  transition: color var(--transition-timing),
-    background-color var(--transition-timing);
+  transition: color var(--transition-timing-1),
+    background-color var(--transition-timing-1);
 }
 
 .fill:hover {
@@ -67,7 +67,7 @@
 
   /* Hiding(Clipping) 100% from top to bottom */
   clip-path: inset(100% 0 0 0);
-  transition: clip-path var(--transition-timing);
+  transition: clip-path var(--transition-timing-1);
 }
 
 .fill:hover::before {

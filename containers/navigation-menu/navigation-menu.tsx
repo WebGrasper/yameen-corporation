@@ -9,13 +9,13 @@ import RightNavigationMenu from "@/containers/right-navigation-menu/right-naviga
 interface Category {
   _id: string;
   name: string;
-  subcategories: SubCategory[];
+  subCategories: SubCategory[];
 }
 
 interface SubCategory {
   _id: string;
   name: string;
-  parentCategory: string;
+  categoryID: string;
 }
 
 const NavigationMenu: FunctionComponent<{ categories: Category[] }> = ({
@@ -24,12 +24,18 @@ const NavigationMenu: FunctionComponent<{ categories: Category[] }> = ({
   const [isOffset, setOffset] = useState<boolean>(false);
   const [navbarHover, setNavbarHover] = useState<boolean>(false);
 
+  // Check initial scroll position on component mount
   useEffect(() => {
+    if (window.scrollY >= 1) {
+      setOffset(true);
+    }
+  }, []);
 
-    const handleScroll = () =>{
+  useEffect(() => {
+    const handleScroll = () => {
       if (window.scrollY >= 1) setOffset(true);
       else setOffset(false);
-    }
+    };
 
     window.addEventListener("scroll", handleScroll);
 
@@ -39,9 +45,6 @@ const NavigationMenu: FunctionComponent<{ categories: Category[] }> = ({
     };
   });
 
-  useEffect(() => {
-    console.log(navbarHover);
-  }, [navbarHover]);
 
   const handleNavbarHover = (value: boolean) => {
     setNavbarHover(value);

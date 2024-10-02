@@ -1,0 +1,24 @@
+
+.root {
+  margin: 1rem 0 0.25rem 0;
+  overflow-x: hidden; 
+}
+
+.animatedRoot{
+  margin: 1rem 0 0.25rem 0;
+  overflow-x: hidden; 
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity var(--transition-timing-2), transform var(--transition-timing-2);
+}
+
+.heading2 {
+  font-size: var(--heading-font-size-3);
+  letter-spacing: var(--heading-letter-spacing-primary);
+  line-height: var(--heading-line-height-3);
+}
+
+.animation {
+  opacity: 1;
+  transform: translateY(0%);
+}

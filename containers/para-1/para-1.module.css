@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0 1rem 0;
+  gap: 0.5rem;
+}
+
+.animatedRoot {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0 1rem 0;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity var(--transition-timing-3),
+    transform var(--transition-timing-3);
+}
+
+.animation {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.para1 {
+  font-size: var(--links-font-size-large);
+}
