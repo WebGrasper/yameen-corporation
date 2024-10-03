@@ -55,11 +55,11 @@
   width: 100%;
   height: 100%;
   scale: 1;
-  transition: scale var(--transition-timing-1);
+  transition: scale var(--transition-timing-5);
 }
 
 .card:hover .images img {
-  scale: 1.125;
+  scale: 1.05;
 }
 
 .content {

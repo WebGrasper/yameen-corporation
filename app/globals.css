@@ -9,12 +9,13 @@
 
   --foreground-rgb-1: rgba(252, 247, 230, 1);
   --foreground-rgb-2: rgba(245, 240, 223, 1);
+  --foreground-rgb-3: rgba(19, 19, 19, 0.3);
   --heading-letter-spacing-primary: -0.05em;
 
   --heading-font-size-1: clamp(1.75rem, 3vw, 2.5rem);
   --heading-font-size-2: clamp(3.25rem, 5vw, 4rem);
   --heading-font-size-3: clamp(2.5rem, 4.25vw, 3.5rem);
-  --heading-font-size-4: clamp(1.15, 2vw, 1.2rem);
+  --heading-font-size-4: clamp(2.6rem, 2vw, 2.75rem);
 
   --heading-font-weight: 600;
   --heading-line-height-1: 0.85;
@@ -36,6 +37,7 @@
   --transition-timing-2: 1s ease;
   --transition-timing-3: 1.125s ease;
   --transition-timing-4: 1.25s ease;
+  --transition-timing-5: 0.3s ease;
 
   --font-color-1: rgba(252, 247, 230, 1);
   --font-color-2: rgba(19, 19, 19, 1);
