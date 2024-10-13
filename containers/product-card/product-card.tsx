@@ -40,7 +40,7 @@ const ProductCard: FunctionComponent<{ animate: boolean }> = ({ animate }) => {
       <div className={styles.card}>
         <div className={styles.images}>
           <img
-            src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+            src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-camel.webp?updatedAt=1728314126048"
             alt="img1"
           />
         </div>
@@ -57,7 +57,7 @@ const ProductCard: FunctionComponent<{ animate: boolean }> = ({ animate }) => {
       <div className={styles.card}>
         <div className={styles.images}>
           <img
-            src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+            src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-elephant.webp?updatedAt=1728314126140"
             alt="img1"
           />
         </div>
@@ -74,7 +74,7 @@ const ProductCard: FunctionComponent<{ animate: boolean }> = ({ animate }) => {
       <div className={styles.card}>
         <div className={styles.images}>
           <img
-            src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+            src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-square-urli.webp?updatedAt=1728314126005"
             alt="img1"
           />
         </div>
@@ -91,7 +91,7 @@ const ProductCard: FunctionComponent<{ animate: boolean }> = ({ animate }) => {
       <div className={styles.card}>
         <div className={styles.images}>
           <img
-            src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+            src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-tortoise-urli.webp?updatedAt=1728314125956"
             alt="img1"
           />
         </div>
@@ -108,7 +108,7 @@ const ProductCard: FunctionComponent<{ animate: boolean }> = ({ animate }) => {
       <div className={styles.card}>
         <div className={styles.images}>
           <img
-            src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+            src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-bowl.webp?updatedAt=1728314125738"
             alt="img1"
           />
         </div>

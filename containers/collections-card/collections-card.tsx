@@ -25,102 +25,102 @@ const CollectionsCard: FunctionComponent<{ animate: boolean }> = ({
     >
       <Link href={'#'} className={styles.card}>
         <img
-          src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+          src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-bowl.webp?updatedAt=1728314125738"
           alt="img1"
           className={styles.image}
         />
         <div className={styles.content}>
           <img
-            src="/right-arrow.png"
+            src="/cursor.png"
             alt="right arrow icon"
             className={styles.icon}
           />
-          <h3 className={`${styles.title} ${frankRuhlLibre.className}`}>
+          <h3 className={`${styles.title}`}>
             Center Tables
           </h3>
         </div>
       </Link>
       <Link href={'#'} className={styles.card}>
         <img
-          src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+          src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-tortoise-urli.webp?updatedAt=1728314125956"
           alt="img1"
           className={styles.image}
         />
         <div className={styles.content}>
           <img
-            src="/right-arrow.png"
+            src="/cursor.png"
             alt="right arrow icon"
             className={styles.icon}
           />
-          <h3 className={`${styles.title} ${frankRuhlLibre.className}`}>
+          <h3 className={`${styles.title}`}>
             Console Tables
           </h3>
         </div>
       </Link>
       <Link href={'#'} className={styles.card}>
         <img
-          src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+          src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-square-urli.webp?updatedAt=1728314126005"
           alt="img1"
           className={styles.image}
         />
         <div className={styles.content}>
           <img
-            src="/right-arrow.png"
+            src="/cursor.png"
             alt="right arrow icon"
             className={styles.icon}
           />
-          <h3 className={`${styles.title} ${frankRuhlLibre.className}`}>
+          <h3 className={`${styles.title}`}>
             Garden Decor
           </h3>
         </div>
       </Link>
       <Link href={'#'} className={styles.card}>
         <img
-          src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+          src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-elephant.webp?updatedAt=1728314126140"
           alt="img1"
           className={styles.image}
         />
         <div className={styles.content}>
           <img
-            src="/right-arrow.png"
+            src="/cursor.png"
             alt="right arrow icon"
             className={styles.icon}
           />
-          <h3 className={`${styles.title} ${frankRuhlLibre.className}`}>
+          <h3 className={`${styles.title}`}>
             Baskets
           </h3>
         </div>
       </Link>
       <Link href={'#'} className={styles.card}>
         <img
-          src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+          src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-camel.webp?updatedAt=1728314126048"
           alt="img1"
           className={styles.image}
         />
         <div className={styles.content}>
           <img
-            src="/right-arrow.png"
+            src="/cursor.png"
             alt="right arrow icon"
             className={styles.icon}
           />
-          <h3 className={`${styles.title} ${frankRuhlLibre.className}`}>
+          <h3 className={`${styles.title}`}>
             Lanterns
           </h3>
         </div>
       </Link>
       <Link href={'#'} className={styles.card}>
         <img
-          src="https://ik.imagekit.io/ancorporation/Test%20resources/oil-lamp.webp?updatedAt=1727003259035"
+          src="https://ik.imagekit.io/ancorporation/Test%20resources/brass-ganpati-urli.webp?updatedAt=1728314126175"
           alt="img1"
           className={styles.image}
         />
         <div className={styles.content}>
           <img
-            src="/right-arrow.png"
+            src="/cursor.png"
             alt="right arrow icon"
             className={styles.icon}
           />
-          <h3 className={`${styles.title} ${frankRuhlLibre.className}`}>
+          <h3 className={`${styles.title}`}>
             Wall Decor
           </h3>
         </div>
