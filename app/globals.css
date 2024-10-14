@@ -11,7 +11,9 @@
   --foreground-rgb-2: rgba(245, 240, 223, 1);
   --foreground-rgb-3: rgba(19, 19, 19, 0.3);
   --foreground-rgb-4: rgba(19, 19, 19, 0.5);
+  --foreground-rgb-5: rgba(19, 19, 19, 1);
   --heading-letter-spacing-primary: -0.05em;
+  --letter-spacing-1: 1px;
 
   --heading-font-size-1: clamp(1.75rem, 3vw, 2.5rem);
   --heading-font-size-2: clamp(3.25rem, 5vw, 4rem);
@@ -30,6 +32,7 @@
   --links-letter-spacing-primary: -0.01em;
   --links-font-size-small: 14px;
   --links-font-size-medium: 16px;
+  --links-font-size-medium-II: 18px;
   --links-font-size-large: 20px;
   --links-gap-1: 1rem;
   --links-gap-2: 0.5rem;
@@ -46,6 +49,8 @@
   --font-color-1: rgba(252, 247, 230, 1);
   --font-color-2: rgba(19, 19, 19, 1);
   --font-size-1: clamp(2rem , 5vw, 4rem);
+  --font-size-2: clamp(1.25rem, 1.75vw, 1.5rem);
+  --font-size-3: clamp(0.95rem, 1.25vw, 1rem);
   --font-letter-spacing-1: -0.025em;
 
   --button-padding-1: .5rem 2rem;

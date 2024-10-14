@@ -1,0 +1,79 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error {
+  color: var(--font-color-1);
+  word-break: break-word;
+  height: 1rem;
+  opacity: 0;
+  transition: opacity var(--transition-timing-1);
+}
+
+/* Error size styles */
+.error.small {
+  font-size: var(--links-font-size-small); /* Small error message size */
+}
+
+.error.medium {
+  font-size: var(--links-font-size-medium); /* Medium error message size */
+}
+
+.error.large {
+  font-size: var(--links-font-size-medium-II); /* Medium error message size */
+}
+
+.show{
+    opacity: 1;
+}
+
+.textInputField {
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+  border-bottom: var(--border-bottom-color-1);
+}
+
+.input {
+  width: var(--width);
+  outline: 0;
+  background-color: transparent;
+  border: none;
+  color: var(--font-color-1);
+  letter-spacing: var(--font-letter-spacing-1);
+}
+
+.large{
+  font-size: var(--font-size-1);
+}
+.medium{
+  font-size: var(--font-size-2);
+}
+.small{
+  font-size: var(--font-size-3);
+}
+
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.input::placeholder {
+  color: var(--font-color-1);
+}
+
+.textInputField button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.textInputField button:focus {
+  outline: 0;
+}
+
+.textInputField button:active {
+  outline: none;
+  border: none;
+}

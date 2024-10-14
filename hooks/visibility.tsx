@@ -4,7 +4,9 @@ import { useEffect, useState, useRef } from "react";
 export const useVisibility = () => {
   const [isVisible, setVisible] = useState<boolean>(false);
   const [viewCount, setViewCount] = useState<number>(0);
-  const elemRef = useRef<HTMLDivElement>(null);
+  
+  /* Defining type to any, because want to apply ref object over both HTMLAnchorElement and HTMLDivElement. */
+  const elemRef = useRef<any>(null);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -2,13 +2,12 @@
 
 import { FunctionComponent, useState } from "react";
 import styles from "./search-dropdown.module.css";
-import { Frank_Ruhl_Libre } from "next/font/google";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import TextInputField from "@/containers/text-input-field/text-input-field";
 
-const frankRuhlLibre = Frank_Ruhl_Libre({ subsets: ["latin"], weight: [ "800"] });
 
 /* Defining the inputs that form consists.*/
 type Inputs = {
@@ -23,7 +22,10 @@ const schema = yup
   })
   .required();
 
-const SearchDropdown: FunctionComponent<{isOffset: boolean, navbarHover: boolean}> = ({isOffset, navbarHover}) => {
+const SearchDropdown: FunctionComponent<{
+  isOffset: boolean;
+  navbarHover: boolean;
+}> = ({ isOffset, navbarHover }) => {
   const [isSearchActive, setSearchActive] = useState<boolean>(false);
 
   const toggleSearchPage = () => {
@@ -47,7 +49,9 @@ const SearchDropdown: FunctionComponent<{isOffset: boolean, navbarHover: boolean
     <div className={styles.searchContainer}>
       <Image
         className={`${styles.secondary_menu_icon} `}
-        src={`${(isOffset || navbarHover) ? '/search-dark.svg' : '/search-light.png'}`}
+        src={`${
+          isOffset || navbarHover ? "/search-dark.svg" : "/search-light.png"
+        }`}
         alt="search icon"
         width={25}
         height={25}
@@ -68,24 +72,20 @@ const SearchDropdown: FunctionComponent<{isOffset: boolean, navbarHover: boolean
             onClick={toggleSearchPage}
           />
           <div className={styles.formContainer}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <input
-                className={`${frankRuhlLibre.className}`}
-                type="search"
-                {...register("search")}
-                placeholder="Start search..."
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+            <TextInputField
+                placeholder={"Start search..."}
+                iconSrc={"/search-light.png"}
+                showButton={true} // Show submit button
+                register={register} // Pass register function
+                name={"search"}
+                error={errors.search?.message} // Pass error message
+                cursiveFonts={true}
+                size={"large"}
+                iconWidth={40}
+                iconHeight={40}
               />
-              <button type="submit">
-                <Image
-                  className={`${styles.secondary_menu_icon} `}
-                  src={"/search-light.png"}
-                  alt="search icon"
-                  width={35}
-                  height={35}
-                />
-              </button>
             </form>
-            {<p className={styles.error}>{errors.search?.message}</p>}
           </div>
         </div>
       </div>

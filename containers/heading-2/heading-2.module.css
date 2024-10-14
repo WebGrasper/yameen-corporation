@@ -4,9 +4,17 @@
   overflow-x: hidden; 
 }
 
+.light{
+  color: var(--font-color-1);
+}
+
+.dark{
+  color: var(--font-color-2);
+}
+
+
 .animatedRoot{
   margin: 1rem 0 0.25rem 0;
-  overflow-x: hidden; 
   opacity: 0;
   transform: translateY(50%);
   transition: opacity var(--transition-timing-2), transform var(--transition-timing-2);

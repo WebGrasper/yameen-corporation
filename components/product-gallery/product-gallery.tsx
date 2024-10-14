@@ -8,8 +8,8 @@ const ProductGallery: FunctionComponent = () => {
   return (
     <div className={styles.root}>
       <div className={styles.main}>
-        <Heading2 value={"Our Products."} animate={true}/>
-        <Para1 value={"Swipe left"} animate={true} showIcon={true}/>
+        <Heading2 value={"Our Products."} animate={true} dark={true}/>
+        <Para1 value={"Swipe left"} animate={true} showIcon={true} dark={true}/>
         <ProductCard animate={true}/>
       </div>
     </div>

@@ -1,10 +1,10 @@
 "use client";
 
 import { FunctionComponent } from "react";
-import styles from "./para-1.module.css";
+import styles from "./para-2.module.css";
 import { useVisibility } from "@/hooks/visibility"; // Import the custom hook
 
-const Para1: FunctionComponent<{
+const Para2: FunctionComponent<{
   value: String,
   animate: boolean,
   showIcon: boolean,
@@ -26,4 +26,4 @@ const Para1: FunctionComponent<{
   );
 };
 
-export default Para1;
+export default Para2;

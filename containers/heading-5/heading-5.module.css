@@ -1,0 +1,32 @@
+.root {
+  margin: 1rem 0 0.25rem 0;
+}
+
+.heading5 {
+  font-size: var(--font-size-3);
+  letter-spacing: var(--heading-letter-spacing-primary);
+  line-height: var(--heading-line-height-5);
+}
+
+.animatedHeading5 {
+  font-size: var(--font-size-3);
+  letter-spacing: var(--heading-letter-spacing-primary);
+  line-height: var(--heading-line-height-5);
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity var(--transition-timing-2),
+    transform var(--transition-timing-2);
+}
+
+.animation {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.light {
+  color: var(--font-color-1);
+}
+
+.dark {
+  color: var(--font-color-2);
+}

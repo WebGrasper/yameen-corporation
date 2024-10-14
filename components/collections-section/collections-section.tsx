@@ -8,8 +8,8 @@ const CollectionsSection: FunctionComponent = () => {
   return (
     <div className={styles.root}>
       <div className={styles.main}>
-        <Heading2 value={"See What We Offer."} animate={true}/>
-        <Para1 value={"View Our Collection"} animate={true} showIcon={false}/>
+        <Heading2 value={"See What We Offer."} animate={true} dark={true}/>
+        <Para1 value={"View Our Collection"} animate={true} showIcon={false} dark={true}/>
         <CollectionsCard animate={false}/>
       </div>
     </div>

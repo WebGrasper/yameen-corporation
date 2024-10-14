@@ -1,91 +1,50 @@
-.searchContainer{
-    display: inherit;
+.searchContainer {
+  display: inherit;
 }
 
-.secondary_menu_icon{
-    cursor: pointer;
+.secondary_menu_icon {
+  cursor: pointer;
 }
 
-.searchPage{
-    position: fixed;
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: -100%;
-    z-index: 99;
-    background-color: black;
-    transition: top var(--transition-timing-1), transform var(--transition-timing-1);
+.searchPage {
+  position: fixed;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: -100%;
+  z-index: 99;
+  background-color: black;
+  transition: top var(--transition-timing-1),
+    transform var(--transition-timing-1);
 }
 
 .searchPage.active {
-    top: 0; 
+  top: 0;
 }
 
-.searchMain{
-    max-width: var(--max-width);
-    height: 100%;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+.searchMain {
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
 
-.search_closing_button{
-    position: absolute;
-    right: calc(4vw + 1rem);
+.search_closing_button {
+  position: absolute;
+  right: calc(4vw + 1rem);
 }
 
-.formContainer{
+.formContainer {
+  width: var(--width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.form{
     width: var(--width);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-}
-
-.error{
-    color: var(--font-color-1);
-    word-break: break-word;
-    text-align: center;
-    height: 1rem;
-}
-
-.formContainer form{
-    display: flex;
-    justify-content: center;
-    border-bottom: var(--border-bottom-color-1);
-    width: var(--width);
-}
-
-.formContainer form input{
-    width: var(--width);
-    outline: 0;
-    background-color: transparent;
-    border: none;
-    color: var(--font-color-1);
-    font-size: var(--font-size-1);
-    letter-spacing: var(--font-letter-spacing-1);
-}
-
-.formContainer form input::-webkit-search-cancel-button {
-    display: none;
-  }
-
-.formContainer form input::placeholder{
-    color: var(--font-color-1);
-}
-
-.formContainer form button{
-    background-color: transparent;
-    border: none;
-}
-
-.formContainer form button:focus {
-    outline:0;
-}
-
-.formContainer form button:active {
-    outline: none;
-    border: none;
 }

@@ -1,0 +1,60 @@
+.root {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 0.25rem 0;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.anchorContainer p {
+  font-size: var(--links-font-size-small);
+  letter-spacing: var(--letter-spacing-1);
+  width: 100%;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.animatedAnchorContainer p {
+  font-size: var(--links-font-size-small);
+  letter-spacing: var(--letter-spacing-1);
+  width: 100%;
+  position: relative;
+  padding-bottom: 5px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity var(--transition-timing-3),
+    transform var(--transition-timing-3);
+}
+
+.root > div > p::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--foreground-rgb-1); /* Set the border color */
+  transition: var(--transition-timing-1);
+}
+
+.root > div > p:hover::after {
+  width: 100%; /* On hover, expand the border from left to right */
+}
+
+.light {
+  color: var(--font-color-1);
+}
+
+.dark {
+  color: var(--font-color-2);
+}
+
+.animation {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
