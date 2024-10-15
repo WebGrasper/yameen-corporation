@@ -12,6 +12,7 @@ import * as yup from "yup";
 import Heading5 from "@/containers/heading-5/heading-5";
 import Anchor from "@/containers/anchor/anchor";
 import Image from "next/image";
+import Link from "next/link";
 
 /* Defining the inputs that form consists.*/
 type Inputs = {
@@ -170,6 +171,17 @@ const Footer: FunctionComponent = () => {
               <Image className={styles.icon} src={`/Mastercard.avif`} alt="menu icon" width={40} height={40} />
               <Image className={styles.icon} src={`/Visa.avif`} alt="menu icon" width={40} height={40} />
             </div>
+          </div>
+        </div>
+        <div className={styles.socialLinksContainer}>
+          <div className={styles.socialIcons}>
+            <Link href={'#'}><Image className={styles.socialIcon} src={'/facebook.png'} width={30} height={30} alt="facebook icon"/></Link>
+            <Link href={'#'}><Image className={styles.socialIcon} src={'/instagram.png'} width={30} height={30} alt="instagram icon"/></Link>
+            <Link href={'#'}><Image className={styles.socialIcon} src={'/twitter.png'} width={30} height={30} alt="twitter icon"/></Link>
+            <Link href={'#'}><Image className={styles.socialIcon} src={'/linkedin.png'} width={30} height={30} alt="linkedin icon"/></Link>
+          </div>
+          <div className={styles.copyrightContainer}>
+            <p className={styles.copyright}>Copyright © {(new Date().getFullYear())} Yameen Corporation. All Rights Reserved.</p>
           </div>
         </div>
       </div>

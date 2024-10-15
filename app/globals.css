@@ -51,6 +51,7 @@
   --font-size-1: clamp(2rem , 5vw, 4rem);
   --font-size-2: clamp(1.25rem, 1.75vw, 1.5rem);
   --font-size-3: clamp(0.95rem, 1.25vw, 1rem);
+  --font-size-4: 14px;
   --font-letter-spacing-1: -0.025em;
 
   --button-padding-1: .5rem 2rem;
