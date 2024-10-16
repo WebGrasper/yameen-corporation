@@ -1,0 +1,64 @@
+.imageCarousal {
+  position: relative;
+  transition: background-color var(--transition-timing-5); /* Smooth transition over 1 second */
+  background-color: black;
+  /* overflow-y: hidden; */
+}
+
+.closeIcon {
+  position: absolute;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  right: 2rem;
+  top: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(0deg);
+  cursor: pointer;
+  transition: opacity var(--transition-timing-5),
+    transform var(--transition-timing-5);
+}
+.closeIcon:hover {
+  transform: rotate(-90deg);
+}
+.activeCloseIcon {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.imageContainer {
+  position: relative;
+  width: fit-content;
+}
+
+.plusIcon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 16px;
+  right: 10px;
+  cursor: pointer;
+  transition: scale var(--transition-timing-5);
+}
+
+.plusIcon:hover {
+  scale: 0.9;
+}
+.unactivePlusIcon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image {
+    width: 350px; /* Maintain aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: height var(--transition-timing-5),
+    width var(--transition-timing-5),
+    transform var(--transition-timing-5); /* Smooth transition */
+}
+
+.activeFullImage {
+    width: 100%;
+  height: 100vh; /* Set height to 100vh */
+}
