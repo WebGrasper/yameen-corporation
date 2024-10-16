@@ -20,7 +20,7 @@ export default function ImageCarousal() {
       const rect = imgRef.current.getBoundingClientRect(); // Get the image's current position
       const centerX = window.innerWidth / 2; // Center of the viewport (X-axis)
       const centerY = window.innerHeight / 2; // Center of the viewport (Y-axis)
-      const translateX = (centerX - (rect.left + rect.width / 2));
+      const translateX = centerX - rect.left - (rect.width / 2);
       const translateY = centerY - (rect.top + rect.height / 2) - (window.innerHeight - rect.height) / 2; // Adjust translateY
       return { translateX, translateY }; // Return both translate values
     }
