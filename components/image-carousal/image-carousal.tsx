@@ -54,8 +54,9 @@ export default function ImageCarousal() {
       <div
         className={styles.imageCarousal}
         style={{
-          width: isZoomClicked ? "100%" : `${imageWidth}px`,
+          width: isZoomClicked ? "100%" : `unset`,
           height: isZoomClicked ? "100vh" : "",
+          overflow: "hidden",
           zIndex: isZoomClicked ? 100 : "auto",
           backgroundColor: isZoomClicked ? 'black' : 'transparent'
         }}
@@ -81,8 +82,7 @@ export default function ImageCarousal() {
             className={`${styles.image} ${isZoomClicked ? styles.activeFullImage : ""}`}
             style={{transform: isZoomClicked
                 ? `translate3d(${translateX}px, ${translateY}px, 0)` // Use translate3d
-                : "unset",
-              width: isZoomClicked ? "auto" : "350px"
+                : "unset"
             }}
             src={
               "https://visualalloy.com/cdn/shop/files/large-black-outdoor-metal-wall-art.webp?v=1725098034&width=1200"
