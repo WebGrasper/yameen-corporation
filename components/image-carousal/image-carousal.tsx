@@ -6,6 +6,8 @@ export default function ImageCarousal() {
   const [isZoomClicked, setZoomClicked] = useState<boolean>(false);
   const [imageWidth, setImageWidth] = useState<number>(0);
   const imgRef = useRef<HTMLImageElement>(null);
+  const [translateX, setTranslateX] = useState<number>(0);
+  const [translateY, setTranslateY] = useState<number>(0);
 
   // Set the initial width of the image container based on the image's width
   useEffect(() => {
@@ -15,23 +17,29 @@ export default function ImageCarousal() {
   }, []);
 
   // Calculate center position for translate3d
-  const getTranslateValue = () => {
+  const setTranslateValue = () => {
     if (imgRef.current) {
       const rect = imgRef.current.getBoundingClientRect(); // Get the image's current position
-      const centerX = window.innerWidth / 2; // Center of the viewport (X-axis)
-      const centerY = window.innerHeight / 2; // Center of the viewport (Y-axis)
-      const translateX = centerX - rect.left - (rect.width / 2);
-      const translateY = centerY - (rect.top + rect.height / 2) - (window.innerHeight - rect.height) / 2; // Adjust translateY
-      return { translateX, translateY }; // Return both translate values
+      console.log("window-width:", window.innerWidth, "image-width:", rect.width, "left:", rect.left)
+      const translateX = (window.innerWidth - rect.width) / 2;
+      const translateY = (window.innerHeight - rect.height) / 2; // Adjust translateY
+      setTranslateX(translateX);
+      setTranslateY(translateY);
+      return;
     }
-    return { translateX: 0, translateY: 0 }; // Default values if image ref is not available
+    setTranslateX(0);
+    setTranslateY(0);
   };
 
-  const { translateX, translateY } = isZoomClicked ? getTranslateValue() : { translateX: 0, translateY: 0 };
-
   useEffect(()=>{
-    console.log(translateX);
+    console.log({translateX, translateY});
   },[translateX])
+
+  useEffect(() => {
+    setTranslateX(0);
+    setTranslateY(0);
+    setTranslateValue();
+  }, [isZoomClicked]);
 
   const zoomImage = () => {
     setZoomClicked(true);
@@ -72,8 +80,10 @@ export default function ImageCarousal() {
             ref={imgRef}
             className={`${styles.image} ${isZoomClicked ? styles.activeFullImage : ""}`}
             style={{transform: isZoomClicked
-                ? `translate3d(${translateX}px, 0, 0)` // Use translate3d
-                : "unset"}}
+                ? `translate3d(${translateX}px, ${translateY}px, 0)` // Use translate3d
+                : "unset",
+              width: isZoomClicked ? "auto" : "350px"
+            }}
             src={
               "https://visualalloy.com/cdn/shop/files/large-black-outdoor-metal-wall-art.webp?v=1725098034&width=1200"
             }
