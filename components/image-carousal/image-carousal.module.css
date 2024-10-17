@@ -51,7 +51,6 @@
 }
 
 .image {
-    width: 350px; /* Maintain aspect ratio */
     object-fit: contain; /* Maintain aspect ratio */
     transition: height var(--transition-timing-5),
     width var(--transition-timing-5),
