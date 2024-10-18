@@ -1,10 +1,12 @@
-import ImageCarousal from "@/components/image-carousal/image-carousal";
+import ImageCarousal from "@/containers/image-carousal/image-carousal";
 import styles from "./page.module.css";
 
 export default function Product() {
   return (
     <main className={styles.root}>
-      <ImageCarousal />
+      <div className={styles.main}>
+        <ImageCarousal />
+      </div>
     </main>
   );
 }

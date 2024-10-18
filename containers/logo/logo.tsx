@@ -9,11 +9,11 @@ const frankRuhlLibre = Frank_Ruhl_Libre({
   weight: ["800"],
 });
 
-const Logo: FunctionComponent<{isOffset: boolean, navbarHover: boolean}> = ({isOffset, navbarHover}) => {
+const Logo: FunctionComponent<{isOffset: boolean, navbarHover: boolean, notAtHomePage: boolean}> = ({isOffset, navbarHover, notAtHomePage}) => {
 
   return (
     <div className={styles.root}>
-      <div className={`${styles.brandName} ${frankRuhlLibre.className} ${isOffset ? styles.active : ""} ${navbarHover ? styles.active : ""}`}>
+      <div className={`${styles.brandName} ${frankRuhlLibre.className} ${(isOffset || navbarHover || notAtHomePage) ? styles.active : ""} `}>
         <p>Yameen</p>
         <p>Corporation</p>
       </div>

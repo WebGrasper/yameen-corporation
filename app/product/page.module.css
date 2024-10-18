@@ -1,0 +1,11 @@
+.root{
+    width: var(--width);
+    padding-inline: 1.125rem;
+    position: relative;
+}
+
+.main{
+    margin: 0 auto;
+    max-width: var(--max-width);
+    position: inherit;
+}

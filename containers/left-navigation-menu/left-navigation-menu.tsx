@@ -18,10 +18,11 @@ interface SubCategory {
   categoryID: string;
 }
 
-const LeftNavigationMenu: FunctionComponent<{ categories: Category[], isOffset: boolean, navbarHover:boolean }> = ({
+const LeftNavigationMenu: FunctionComponent<{ categories: Category[], isOffset: boolean, navbarHover:boolean, notAtHomePage: boolean }> = ({
   categories,
   isOffset,
-  navbarHover
+  navbarHover,
+  notAtHomePage
 }) => {
 
     const [isShowLeftMenu, setIsShowLeftMenu] = useState<boolean>(false);
@@ -34,10 +35,10 @@ const LeftNavigationMenu: FunctionComponent<{ categories: Category[], isOffset: 
     <>
       <div className={styles.root}>
         <div className={styles.sideMenuContainer}>
-          <Image src={`${(isOffset || navbarHover) ? '/menu-dark.png' : '/menu-light.png'}`} alt="menu icon" width={25} height={25} onClick={handleLeftMenu}/>
-          <SearchDropdown isOffset={isOffset} navbarHover={navbarHover}/>
+          <Image src={`${(isOffset || navbarHover || notAtHomePage) ? '/menu-dark.png' : '/menu-light.png'}`} alt="menu icon" width={25} height={25} onClick={handleLeftMenu}/>
+          <SearchDropdown isOffset={isOffset} navbarHover={navbarHover} notAtHomePage={notAtHomePage}/>
         </div>
-        <CategoryDrodown categories={categories} isShowLeftMenu={isShowLeftMenu} isOffset={isOffset} navbarHover={navbarHover} handleLeftMenu={handleLeftMenu} />
+        <CategoryDrodown categories={categories} isShowLeftMenu={isShowLeftMenu} isOffset={isOffset} navbarHover={navbarHover} handleLeftMenu={handleLeftMenu} notAtHomePage={notAtHomePage}/>
       </div>
     </>
   );

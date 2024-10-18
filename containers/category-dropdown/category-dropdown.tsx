@@ -28,8 +28,9 @@ const CategoryDrodown: FunctionComponent<{
   isShowLeftMenu: boolean,
   handleLeftMenu: () => void,
   isOffset: boolean,
-  navbarHover: boolean
-}> = ({ categories, isShowLeftMenu, handleLeftMenu, isOffset, navbarHover }) => {
+  navbarHover: boolean,
+  notAtHomePage: boolean
+}> = ({ categories, isShowLeftMenu, handleLeftMenu, isOffset, navbarHover, notAtHomePage }) => {
   const [categoryHover, setCategoryHover] = useState<String | null>(null);
   const [screenSize, setScreenSize] = useState<number | null>(null);  // Initialize with null
 
@@ -87,7 +88,7 @@ const CategoryDrodown: FunctionComponent<{
                   handleCategoryHover(category._id, "hover"),
                 onMouseLeave: () => handleCategoryHover(null, "hover"),
               })}
-          className={`${styles.links} ${(isOffset || navbarHover) ? styles.active : ""}`}
+          className={`${styles.links} ${(isOffset || navbarHover || notAtHomePage) ? styles.active : ""}`}
         >
           <div className={styles.dropDownLink}>
             <div>{category.name}</div>
@@ -96,7 +97,7 @@ const CategoryDrodown: FunctionComponent<{
                 categoryHover === category._id ? styles.rotate : ""
               }`}
               src={
-                ((screenSize ?? 1121) < 1121 || (isOffset || navbarHover))
+                ((screenSize ?? 1121) < 1121 || (isOffset || navbarHover || notAtHomePage))
                   ? '/down-arrow-dark.png'
                   : '/down-arrow-light.png'
               }
@@ -121,12 +122,12 @@ const CategoryDrodown: FunctionComponent<{
           </ul>
         </li>
       ))}
-      <li className={`${styles.links} ${(isOffset || navbarHover) ? styles.active : ""}`}>
+      <li className={`${styles.links} ${(isOffset || navbarHover || notAtHomePage) ? styles.active : ""}`}>
         <Link href={"#"} passHref>
           About us
         </Link>
       </li>
-      <li className={`${styles.links} ${(isOffset || navbarHover) ? styles.active : ""}`}>
+      <li className={`${styles.links} ${(isOffset || navbarHover || notAtHomePage) ? styles.active : ""}`}>
         <Link href={"#"} passHref>
           Contact us
         </Link>

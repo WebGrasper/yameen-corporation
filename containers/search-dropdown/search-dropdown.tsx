@@ -25,7 +25,8 @@ const schema = yup
 const SearchDropdown: FunctionComponent<{
   isOffset: boolean;
   navbarHover: boolean;
-}> = ({ isOffset, navbarHover }) => {
+  notAtHomePage: boolean;
+}> = ({ isOffset, navbarHover, notAtHomePage }) => {
   const [isSearchActive, setSearchActive] = useState<boolean>(false);
 
   const toggleSearchPage = () => {
@@ -50,7 +51,7 @@ const SearchDropdown: FunctionComponent<{
       <Image
         className={`${styles.secondary_menu_icon} `}
         src={`${
-          isOffset || navbarHover ? "/search-dark.svg" : "/search-light.png"
+          isOffset || navbarHover || notAtHomePage ? "/search-dark.svg" : "/search-light.png"
         }`}
         alt="search icon"
         width={25}
