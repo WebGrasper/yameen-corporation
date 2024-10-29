@@ -1,11 +1,39 @@
-.root{
+.root {
     width: var(--width);
     padding-inline: 1.125rem;
-    position: relative;
 }
 
-.main{
+.main {
     margin: 0 auto;
     max-width: var(--max-width);
-    position: inherit;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+.sliderContainer {
+    grid-column: 1;
+}
+
+.productInfoContainer {
+    grid-column: 2;
+}
+
+.productDescriptionContainer {
+    grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 1024px){
+    .productGrid{
+        grid-template-columns: 1fr;
+    }
+    .sliderContainer,
+    .productInfoContainer,
+    .productDescriptionContainer {
+        grid-column: 1; 
+    }
 }
