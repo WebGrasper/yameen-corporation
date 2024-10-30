@@ -27,6 +27,7 @@
     grid-column: 1 / -1;
 }
 
+
 @media only screen and (max-width: 1024px){
     .productGrid{
         grid-template-columns: 1fr;
