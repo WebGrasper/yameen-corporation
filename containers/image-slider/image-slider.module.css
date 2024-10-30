@@ -1,40 +1,61 @@
-.root{
-    max-width: 100%;
-    height: 450px;
-    max-height: 450px;
+.root {
+    width: 100%;
+    height: 550px;
     overflow: hidden;
     position: relative;
     background-color: var(--foreground-rgb-1);
+    opacity: 1;
 }
 
-.rootActive{
+.rootActive {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100% !important;
     z-index: 150;
+    animation: fadeIn var(--transition-timing-1);
 }
 
-.slide{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    padding-inline: 6rem;
-    transition: var(--transition-timing-1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    & img {
-        border-radius: var(--border-radius-1);
-        max-width: 100%;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
-.slide:hover{
+
+
+.slideContainer {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-timing-1);
+}
+
+
+.slide {
+    height: inherit;
+    border-radius: var(--border-radius-1);
+    transition: border-radius var(--transition-timing-1);
+}
+
+.slide:hover {
     cursor: zoom-in;
 }
 
-.closeButton{
+.slideActive {
+    width: inherit;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.closeButton {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -42,17 +63,19 @@
     right: calc(1.25vw + 1rem);
     border: var(--border-bottom-color-3);
     border-radius: 50%;
-    padding: 18px;
+    padding: 1.125rem;
     cursor: pointer;
     z-index: 150;
     background-color: var(--foreground-rgb-1);
     transition: transform var(--transition-timing-1);
 }
-.closeButton:hover{
+
+.closeButton:hover {
     transform: rotate(-90deg);
 }
 
-.leftButton, .rightButton{
+.leftButton,
+.rightButton {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -63,23 +86,69 @@
     cursor: pointer;
 }
 
-.leftButton{
+.leftButton {
     left: 0;
 }
-.leftButtonActive{
+
+.leftButtonActive {
     left: calc(1.25vw + 1rem);
 }
 
-.rightButton{
+.rightButton {
     right: 0;
 }
-.rightButtonActive{
+
+.rightButtonActive {
     right: calc(1.25vw + 1rem);
 }
 
+@media only screen and (max-width: 616px) {
+    .root {
+        height: 500px;
+    }
+}
 
-@media only screen and (max-width: 501px){
-    .root{
+@media only screen and (max-width: 538px) {
+    .root {
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 493px) {
+    .root {
+        height: 400px;
+    }
+
+    .leftButton,
+    .rightButton,
+    .closeButton {
+        width: 50px;
+        height: 50px;
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 442px) {
+    .root {
         height: 350px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .root {
+        height: 300px;
+    }
+    .leftButton,
+    .rightButton,
+    .closeButton {
+        width: 45px;
+        height: 45px;
+        padding: 0.85rem;
+    }
+}
+
+@media only screen and (max-width: 341px) {
+    .root {
+        height: 260px;
     }
 }

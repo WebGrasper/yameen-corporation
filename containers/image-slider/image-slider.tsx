@@ -13,17 +13,15 @@ const ImageSlider = () => {
     ];
 
     useEffect(() => {
-        const slides = document.querySelectorAll(`.${styles.slide}`);
+        const slides = document.querySelectorAll(`.${styles.slideContainer}`);
         slides.forEach((slide, index) => {
-            // let slideDocument = (slide as HTMLElement);
-            // console.log("width: ", slideDocument.style);
             (slide as HTMLElement).style.left = `${index * 100}%`;
         });
     }, []);
 
     useEffect(() => {
         (() => {
-            const slides = document.querySelectorAll(`.${styles.slide}`);
+            const slides = document.querySelectorAll(`.${styles.slideContainer}`);
             slides.forEach(
                 (slide, index) => {
                     (slide as HTMLElement).style.transform = `translateX(-${counter * 100}%)`;
@@ -37,7 +35,7 @@ const ImageSlider = () => {
             {activeFullImage && <img src="/close-dark.png" alt="close button" className={styles.closeButton} onClick={() => setActiveFullImage(false)} />}
             {images.map((src, index) => (
                 <div
-                    className={`${styles.slide} ${activeFullImage ? styles.slideActive : ''}`}
+                    className={`${styles.slideContainer}`}
                     key={index}
                 >
                     <img
@@ -45,6 +43,7 @@ const ImageSlider = () => {
                         alt=""
                         loading="lazy"
                         onClick={() => setActiveFullImage(true)}
+                        className={`${styles.slide} ${activeFullImage ? styles.slideActive : ''}`}
                     />
                 </div>
             ))}

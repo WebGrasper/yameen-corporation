@@ -1,6 +1,7 @@
 .root {
     width: var(--width);
     padding-inline: 1.125rem;
+    padding-block: 2.5rem;
 }
 
 .main {
@@ -10,7 +11,7 @@
 
 .productGrid {
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template-columns: 6.5fr 3.5fr;
     grid-template-rows: auto;
     gap: 1rem;
 }
