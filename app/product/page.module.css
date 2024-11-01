@@ -28,6 +28,21 @@
     grid-column: 1 / -1;
 }
 
+.sizeContainer{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 1rem;
+}
+
+.quantityContainer{
+    margin-block: 1rem;
+}
+
+.cartButtonContainer{
+    margin-block: 3rem;
+}
 
 @media only screen and (max-width: 1024px){
     .productGrid{

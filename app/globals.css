@@ -21,8 +21,10 @@
   --heading-font-size-4: clamp(2.6rem, 2vw, 2.75rem);
   --heading-font-size-5: clamp(2.5rem, 2vw, 2.75rem);
   --heading-font-size-6: clamp(2.25rem, 2vw, 2.75rem);
+  --heading-font-size-7: clamp(2.2rem, 3vw, 2.375rem);
 
   --heading-font-weight: 600;
+
   --heading-line-height-1: 0.85;
   --heading-line-height-2: 1.25;
   --heading-line-height-3: 1.35;
@@ -52,21 +54,33 @@
   --font-size-2: clamp(1.25rem, 1.75vw, 1.5rem);
   --font-size-3: clamp(0.95rem, 1.25vw, 1rem);
   --font-size-4: 14px;
-  --font-size-5: clamp(2rem, 3vw, 2.375rem);
+  --font-size-5: 12px;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-weight-extra-bold: 800;
+
   --font-letter-spacing-1: -0.025em;
 
   --button-padding-1: .5rem 2rem;
+  --button-padding-2: 0.65rem 2rem;
+  --button-padding-3: 1rem 2rem;
+
   --button-border-radius-1: 26px;
+
   --button-color-hover-1: rgba(19, 19, 19, 1);
   --button-bg-color-1: rgba(252, 247, 230, 1);
   --button-bg-color-2: rgba(19, 19, 19, 1);
   --button-bg-hover-1: rgba(252, 247, 230, 1);
+
   --button-border-color-1: rgba(252, 247, 230, 1);
   --button-border-color-2: rgba(19, 19, 19, 1);
 
   --border-bottom-color-1: 1.5px solid rgba(252, 247, 230, 1);
   --border-bottom-color-2: 1.5px solid rgba(19, 19, 19, 1);
   --border-bottom-color-3: 1.5px solid rgba(19, 19, 19, 0.25);
+  --border-bottom-color-4: 1px solid rgba(19, 19, 19, 1);
+
   --border-color: rgba(10, 10, 9, 1);
 
   --max-width-for-tablet: 1032px;

@@ -7,7 +7,7 @@ import { useVisibility } from "@/hooks/visibility"; // Import the custom hook
 
 const frankRuhlLibre = Frank_Ruhl_Libre({
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["600", "700", "800", "900"],
 });
 
 const Heading6: FunctionComponent<{ value: String; animate: boolean, dark: boolean }> = ({

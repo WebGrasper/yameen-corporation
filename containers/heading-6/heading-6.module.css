@@ -3,13 +3,13 @@
 }
 
 .heading5 {
-  font-size: var(--font-size-5);
+  font-size: var(--heading-font-size-7);
   letter-spacing: var(--heading-letter-spacing-primary);
   line-height: var(--heading-line-height-5);
 }
 
 .animatedHeading5 {
-  font-size: var(--font-size-5);
+  font-size: var(--heading-font-size-7);
   letter-spacing: var(--heading-letter-spacing-primary);
   line-height: var(--heading-line-height-5);
   opacity: 0;

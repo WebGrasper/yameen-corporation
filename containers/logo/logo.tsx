@@ -3,6 +3,7 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import styles from "./logo.module.css";
 import { Frank_Ruhl_Libre } from "next/font/google";
+import Link from "next/link";
 
 const frankRuhlLibre = Frank_Ruhl_Libre({
   subsets: ["latin"],
@@ -12,12 +13,12 @@ const frankRuhlLibre = Frank_Ruhl_Libre({
 const Logo: FunctionComponent<{isOffset: boolean, navbarHover: boolean, notAtHomePage: boolean}> = ({isOffset, navbarHover, notAtHomePage}) => {
 
   return (
-    <div className={styles.root}>
+    <Link href={'/'} className={styles.root}>
       <div className={`${styles.brandName} ${frankRuhlLibre.className} ${(isOffset || navbarHover || notAtHomePage) ? styles.active : ""} `}>
         <p>Yameen</p>
         <p>Corporation</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

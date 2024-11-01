@@ -3,7 +3,7 @@
 import { FunctionComponent } from "react";
 import styles from "./hero-section.module.css";
 import { Frank_Ruhl_Libre, Poppins } from "next/font/google";
-import Button from "@/containers/button/button";
+import RoutingButton from "@/containers/routing-button/routing-button";
 
 const frankRuhlLibre = Frank_Ruhl_Libre({
   subsets: ["latin"],
@@ -44,7 +44,7 @@ const HeroSection: FunctionComponent = () => {
           </p>
         </div>
         <div className={styles.buttonContainer}>
-          <Button value={'Contact us'} link={'#'} transparent={false}/>
+          <RoutingButton prefix={undefined} value={'contact us'} suffix={undefined} route={'#'} transparent={true} size={"sm"}/>
         </div>
       </div>
     </div>

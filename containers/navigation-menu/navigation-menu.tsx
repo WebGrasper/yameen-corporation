@@ -51,8 +51,10 @@ const NavigationMenu: FunctionComponent<{ categories: Category[] }> = ({
 
   useEffect(()=>{
     if(pathname !== '/')
-      setNotAtHomePage(true)
-  },[]);
+      setNotAtHomePage(true);
+    else
+      setNotAtHomePage(false);
+  },[pathname]);
 
 
 
