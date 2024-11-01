@@ -1,0 +1,12 @@
+.root{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counterContainer{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}

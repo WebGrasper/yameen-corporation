@@ -1,0 +1,100 @@
+.transparent {
+    color: var(--button-bg-color-2);
+    border-radius: var(--button-border-radius-1);
+    background-color: var(--button-bg-color-1);
+    border: 1px solid var(--button-border-color-1);
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: var(--font-size-5);
+    letter-spacing: var(--letter-spacing-1);
+    transition: color var(--transition-timing-1);
+}
+
+.transparent:hover {
+    color: var(--button-bg-color-1);
+    border: 1px solid var(--button-border-color-1);
+}
+
+.transparent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--button-bg-color-2);
+    width: 100%;
+    height: 100%;
+    border-radius: var(--button-border-radius-1);
+    z-index: -1;
+
+    /* Hiding(Clipping) 100% from top to bottom */
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path var(--transition-timing-1);
+}
+
+.transparent:hover::before {
+    /* Stop clipping. */
+    clip-path: inset(0 0 0 0);
+}
+
+/* -------------------------------------------------------------------- */
+
+.fill {
+    color: var(--font-color-1);
+    border: 1px solid var(--button-border-color-1);
+    border-radius: var(--button-border-radius-1);
+    background-color: var(--button-bg-color-2);
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size-5);
+    letter-spacing: var(--letter-spacing-1);
+    transition: color var(--transition-timing-1),
+        background-color var(--transition-timing-1);
+}
+
+.fill:hover {
+    color: var(--font-color-2);
+    border: 1px solid var(--button-border-color-2);
+}
+
+.fill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--button-bg-color-1);
+    width: 100%;
+    height: 100%;
+    border-radius: var(--button-border-radius-1);
+    z-index: -1;
+
+    /* Hiding(Clipping) 100% from top to bottom */
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path var(--transition-timing-1);
+}
+
+.fill:hover::before {
+    /* Stop clipping. */
+    clip-path: inset(0 0 0 0);
+}
+
+/* Sizes */
+
+.sm {
+    padding: var(--button-padding-1);
+}
+
+.md {
+    padding: var(--button-padding-2);
+}

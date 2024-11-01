@@ -1,0 +1,11 @@
+.table{
+    width: 100%;
+    margin-block: 1rem;
+    padding-block: 1rem;
+    border-top: var(--border-bottom-color-4);
+    border-bottom: var(--border-bottom-color-4);
+}
+.rowValue{
+    display: flex;
+    justify-content: end;
+}

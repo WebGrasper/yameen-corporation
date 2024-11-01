@@ -1,0 +1,16 @@
+.root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--foreground-rgb-5);
+    width: fit-content;
+    height: fit-content;
+    padding: 0.6rem;
+    cursor: pointer;
+}
+
+.root > img{
+    width: 14px;
+    height: 14px;
+}
