@@ -20,12 +20,13 @@
     grid-column: 1;
 }
 
-.productInfoContainer {
+.infoContainer {
     grid-column: 2;
 }
 
-.productDescriptionContainer {
+.descriptionContainer {
     grid-column: 1 / -1;
+    margin-block: 3rem;
 }
 
 .sizeContainer{
@@ -43,6 +44,14 @@
 .cartButtonContainer{
     margin-block: 3rem;
 }
+
+.infoHeadingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 @media only screen and (max-width: 1024px){
     .productGrid{

@@ -5,8 +5,9 @@ import ProductInfoTable from "@/containers/product-info-table/product-info-table
 import Para3 from "@/containers/para-3/para-3";
 import SizeDropDownMenu from "@/containers/size-drop-down-menu/size-drop-down-menu";
 import QuantityAdjuster from "@/containers/quantity-adjuster/quantity-adjuster";
-import ActionButton from "@/containers/action-button/action-button";
 import RoutingButton from "@/containers/routing-button/routing-button";
+import Para2 from "@/containers/para-2/para-2";
+import Separator from "@/containers/separator/separator";
 
 export default function Product() {
 
@@ -17,7 +18,7 @@ export default function Product() {
       <div className={styles.main}>
         <div className={styles.productGrid}>
           <div className={styles.sliderContainer}><ImageSlider /></div>
-          <div className={styles.productInfoContainer}>
+          <div className={styles.infoContainer}>
             <Heading6 value={"Large Abstract Metal Wall Art"} animate={false} dark={true} />
             <ProductInfoTable />
             <div className={styles.sizeContainer}>
@@ -31,7 +32,14 @@ export default function Product() {
               <RoutingButton prefix={"rs."} value={'4,200.00'} suffix={"- Add to cart"} route={'#'} transparent={false} size={"md"} />
             </div>
           </div>
-          <div className={styles.productDescriptionContainer}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium distinctio non esse a iure culpa. Animi rerum eveniet id, nihil cumque nam placeat. Neque nulla porro cumque saepe vero natus.</div>
+          <div className={styles.descriptionContainer}>
+            <div className={styles.infoHeadingContainer}>
+              <Para2 animate={false} dark={true} showIcon={false} value={"INFO."}/>
+            </div>
+            <div className={styles.separatorContainer}>
+              <Separator />
+            </div>
+          </div>
         </div>
       </div>
     </main>
